@@ -1,0 +1,44 @@
+{
+  "name": "angular-starter-kit",
+  "version": "0.0.0",
+  "description": "Angular Starter Kit",
+  "main": "app.js",
+  "dependencies": {
+    "protractor": "^3.1.0"
+  },
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "jasmine-core": "^2.4.1",
+    "http-server": "^0.8.5",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7",
+    "protractor": "^3.1.0"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1",
+
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js  --single-run",
+
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor app/tests/e2e/protractor.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamsher31/angular-starter-kit.git"
+  },
+  "author": "Shamsher Ansari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shamsher31/angular-starter-kit/issues"
+  },
+  "homepage": "https://github.com/shamsher31/angular-starter-kit#readme"
+}

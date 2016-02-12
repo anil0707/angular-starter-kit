@@ -1,0 +1,30 @@
+{
+  "name": "angular-starter-kit",
+  "version": "0.0.0",
+  "authors": [
+    "ansarisam47@gmail.com"
+  ],
+  "description": "Angular Starter Kit",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.18",
+    "angular": "~1.5.0",
+    "angular-loading-bar": "~0.8.0",
+    "AngularJS-Toaster": "~1.1.0",
+    "angular-jwt": "~0.0.9",
+    "lodash": "~4.3.0",
+    "angular-local-storage": "~0.2.3",
+    "angular-bootstrap": "~1.1.2",
+    "bootstrap": "~3.3.6"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.5.0"
+  }
+}
