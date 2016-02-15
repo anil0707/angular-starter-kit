@@ -1,6 +1,5 @@
-'use strict';
-
 // Declare app level module which depends on views, and components
+
 angular
  .module('myApp', [
   
@@ -24,4 +23,4 @@ function urlRouterProvider($locationProvider, $urlRouterProvider) {
  //  });
 
   $urlRouterProvider.otherwise('/login');
-};
+}

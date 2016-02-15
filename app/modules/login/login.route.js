@@ -1,5 +1,3 @@
-'use strict';
-
 angular
  .module('login')
  .config(['$stateProvider', stateProvider]);

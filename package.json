@@ -8,8 +8,15 @@
   },
   "devDependencies": {
     "bower": "^1.7.7",
-    "jasmine-core": "^2.4.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.2",
     "http-server": "^0.8.5",
+    "jasmine-core": "^2.4.1",
+    "jshint": "^2.9.1",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
@@ -17,28 +24,24 @@
   },
   "scripts": {
     "postinstall": "bower install",
-
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
-
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run",
-
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
-
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor app/tests/e2e/protractor.conf.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shamsher31/angular-starter-kit.git"
+    "url": "https://github.com/anil0707/angular-starter-kit.git"
   },
-  "author": "Shamsher Ansari",
+  "author": "Anil Chauhan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shamsher31/angular-starter-kit/issues"
+    "url": "https://github.com/anil0707/angular-starter-kitissues"
   },
-  "homepage": "https://github.com/shamsher31/angular-starter-kit#readme"
+  "homepage": "https://github.com/anil0707/angular-starter-kit#readme"
 }
