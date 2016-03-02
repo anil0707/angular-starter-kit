@@ -1,6 +1,6 @@
 ### Angular Starter Kit
 
-#### Motivation
+### Motivation
 If you are starting new project in AngularJs and you want to write moduler and maintainable application that can be use by
 you or your team of any size and you dont want to spend more time on defining your folder structure. Then this starter kit
 is for you.
