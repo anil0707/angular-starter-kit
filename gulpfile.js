@@ -8,6 +8,14 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
+
+gulp.task('connect', function () {
+    connect.server({
+        root: '',
+        port: 8000
+    })
+})
+
 // Lint Task
 gulp.task('lint', function() {
     return gulp.src([
@@ -50,4 +58,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'library']);
+gulp.task('default', ['connect', 'lint', 'sass', 'scripts', 'watch', 'library']);
