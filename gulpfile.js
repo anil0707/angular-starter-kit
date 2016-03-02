@@ -7,14 +7,9 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var connect = require('gulp-connect');
+var webserver = require('gulp-webserver');
 
-
-gulp.task('connect', function () {
-    connect.server({
-        root: '',
-        port: 8000
-    })
-})
 
 // Lint Task
 gulp.task('lint', function() {
@@ -45,9 +40,6 @@ gulp.task('scripts', function() {
 gulp.task('library', function() {
     return gulp.src('./bower_components/**/*.js')
         .pipe(concat('lib.js'))
-        .pipe(gulp.dest('./build/js'))
-        .pipe(rename('lib.min.js'))
-        .pipe(uglify())
         .pipe(gulp.dest('./build/js'));
 });
 
@@ -57,5 +49,12 @@ gulp.task('watch', function() {
     gulp.watch('./app/**/*.css', ['sass']);
 });
 
+gulp.task('webserver', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      fallback: 'index.html'
+    }));
+});
+
 // Default Task
-gulp.task('default', ['connect', 'lint', 'sass', 'scripts', 'watch', 'library']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'library', 'webserver']);
