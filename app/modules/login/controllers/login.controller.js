@@ -1,7 +1,18 @@
 angular
  .module('login')
- .controller('LoginCtrl', ['$scope', LoginCtrl]);
+ .controller('LoginCtrl', ['$scope', '$http', '$state', LoginCtrl]);
 
-function LoginCtrl($scope) {
-	$scope.message = "Welcome to awesome login page..";
+function LoginCtrl($scope, $http, $state) {
+
+	$scope.login = function(){
+		$http({
+            method: 'POST',
+            url: 'http://localhost:8000/login',
+            data: $scope.user
+		})
+		.then(function(response) {
+			
+			$state.go('dashboard');
+		});
+	};
 }

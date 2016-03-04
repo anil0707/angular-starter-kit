@@ -10,6 +10,7 @@ angular
   'directives',
   'services',
   
+  'dashboard',
   'login'
  
  ])
@@ -22,5 +23,5 @@ function urlRouterProvider($locationProvider, $urlRouterProvider) {
 	// requireBase: false
  //  });
 
-  $urlRouterProvider.otherwise('/login');
+  //$urlRouterProvider.otherwise('/login');
 }
