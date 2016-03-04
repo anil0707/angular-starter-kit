@@ -4,8 +4,6 @@ angular
 
 function DashboardCtrl($scope, users) {
 
-	//var users = UsersService.getUserDetails();
-
-	console.log(users);
+	$scope.users = users.data;
 	
 }
