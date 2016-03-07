@@ -14,15 +14,6 @@ function stateProvider($stateProvider) {
 				}
 			}  
 		})
-		.state('signup', {
-			url : '/signup',
-			views : {
-				'@' : {
-					controller : 'SignupCtrl',
-					templateUrl : 'app/modules/login/templates/signup.view.html'		  				
-				}
-			}  
-		})
 		.state('forgot', {
 			url : '/forgot',
 			views : {

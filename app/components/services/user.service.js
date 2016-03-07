@@ -12,8 +12,18 @@ function UsersService($http) {
 			cache: true
 		});
     }
-    
+
+    function add(payload) {
+
+		return $http({
+			method: 'POST',
+			url: 'http://localhost:8000/add',
+			data: payload
+		});
+    }
+
     return {
-      getUserDetails: getUserDetails
+      getUserDetails: getUserDetails,
+      add: add
 	};
 }

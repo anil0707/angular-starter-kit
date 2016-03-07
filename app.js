@@ -11,7 +11,8 @@ angular
   'services',
   
   'dashboard',
-  'login'
+  'login',
+  'user'
  
  ])
  .config(['$locationProvider', '$urlRouterProvider', urlRouterProvider]); 
