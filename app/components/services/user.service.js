@@ -12,7 +12,7 @@ function UsersService($http) {
 			cache: true
 		});
     }
-
+    
     return {
       getUserDetails: getUserDetails
 	};

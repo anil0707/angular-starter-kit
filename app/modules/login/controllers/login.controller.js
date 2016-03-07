@@ -1,18 +1,17 @@
 angular
  .module('login')
- .controller('LoginCtrl', ['$scope', '$http', '$state', LoginCtrl]);
+ .controller('LoginCtrl', ['$scope', '$state', 'AuthService', LoginCtrl]);
 
-function LoginCtrl($scope, $http, $state) {
+function LoginCtrl($scope, $state, AuthService) {
 
 	$scope.login = function(){
-		$http({
-            method: 'POST',
-            url: 'http://localhost:8000/login',
-            data: $scope.user
-		})
-		.then(function(response) {
-			
+
+		AuthService.login($scope.user)
+		.success(function (response) {
 			$state.go('dashboard');
+		})
+		.error(function (error) {
+			$scope.loginErr = error.message;
 		});
-	};
+	 };
 }
