@@ -1,8 +1,8 @@
 angular
  .module('login')
- .controller('LoginCtrl', ['$scope', '$state', 'AuthService', LoginCtrl]);
+ .controller('LoginCtrl', ['$scope', '$state', 'AuthService', 'localStorageService', LoginCtrl]);
 
-function LoginCtrl($scope, $state, AuthService) {
+function LoginCtrl($scope, $state, AuthService, localStorageService) {
 
 	$scope.login = function(){
 
@@ -13,6 +13,10 @@ function LoginCtrl($scope, $state, AuthService) {
 
 		AuthService.login($scope.user)
 		.success(function (response) {
+			localStorageService.set('authToken', response.authToken);
+
+			//Remove on logout
+			//localStorageService.remove(key);
 			$state.go('dashboard');
 		})
 		.error(function (error) {

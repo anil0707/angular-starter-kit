@@ -8,8 +8,7 @@ function UsersService($http) {
 
 		return $http({
 			method: 'GET',
-			url: 'http://localhost:8000/users',
-			cache: true
+			url: 'http://localhost:8000/users'
 		});
     }
 

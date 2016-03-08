@@ -1,6 +1,6 @@
 // Declare app level module which depends on views, and components
 
-angular
+var myApp = angular
  .module('myApp', [
   
   'ui.router',
@@ -14,15 +14,23 @@ angular
   'login',
   'user'
  
- ])
- .config(['$locationProvider', '$urlRouterProvider', urlRouterProvider]); 
+ ]);
 
-function urlRouterProvider($locationProvider, $urlRouterProvider) {
-  
- //  $locationProvider.html5Mode({
-	// enabled: true,
-	// requireBase: false
- //  });
+
+myApp.config(function($locationProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider){
+
+  localStorageServiceProvider.setPrefix('myApp');
+
+  $httpProvider.interceptors.push('HttpInterceptorService');
+
+  // $httpProvider.defaults.useXDomain = true;
+  // delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+  // $locationProvider.html5Mode({
+  //   enabled: true,
+  //   requireBase: false
+  // });
 
   //$urlRouterProvider.otherwise('/login');
-}
+
+});

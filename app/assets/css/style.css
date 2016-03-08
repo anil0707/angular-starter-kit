@@ -8,7 +8,7 @@ body {
 }
 
 .form-signin {
-  max-width: 380px;
+  max-width: 550px;
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-color: #fff;
@@ -40,5 +40,13 @@ body {
 	  margin-bottom: 20px;
 	  border-top-left-radius: 0;
 	  border-top-right-radius: 0;
+	}
+
+	.btn-input {
+   		display: block;
+	}
+
+	.btn-input .btn.form-control {
+	    text-align: left;
 	}
 }
