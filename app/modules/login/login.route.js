@@ -22,5 +22,14 @@ function stateProvider($stateProvider) {
 					templateUrl : 'app/modules/login/templates/forgot.view.html'		  				
 				}
 			}  
+		})
+		.state('logout', {
+			url : '/logout',
+			views : {
+				'@' : {
+					controller : 'LogoutCtrl',
+					template : ''	  				
+				}
+			}
 		});
 }
