@@ -21,11 +21,8 @@ myApp.config(function($locationProvider, $urlRouterProvider, $httpProvider, loca
 
   localStorageServiceProvider.setPrefix('myApp');
 
-  $httpProvider.interceptors.push('HttpInterceptorService');
-
-  // $httpProvider.defaults.useXDomain = true;
-  // delete $httpProvider.defaults.headers.common['X-Requested-With'];
-
+  $httpProvider.interceptors.push('BearerAuthInterceptor');
+  
   // $locationProvider.html5Mode({
   //   enabled: true,
   //   requireBase: false

@@ -1,14 +1,18 @@
 angular
 	.module('services')
-	.factory('HttpInterceptorService', HttpInterceptor);
+	.factory('BearerAuthInterceptor', BearerAuthInterceptor);
 
-function HttpInterceptor(localStorageService) {
+function BearerAuthInterceptor(localStorageService) {
 
     return {
 		'request': function(config) {
 
-		  config.headers.Token = localStorageService.get('authToken');
+		  config.headers.Authorization = 'Bearer ' + localStorageService.get('authToken');
 		  return config;
+		},
+		'response': function(response) {
+			
+		  return response;
 		}
 
 		
@@ -16,15 +20,7 @@ function HttpInterceptor(localStorageService) {
 		// 'requestError': function(rejection) {
 		//   console.log(rejection);
 		// },
-
-
-
-		// // optional method
-		// 'response': function(response) {
-		//   console.log(response);
-		//   return response;
-		// },
-
+	
 		// // optional method
 		// 'responseError': function(rejection) {
 		// 	console.log(rejection);
