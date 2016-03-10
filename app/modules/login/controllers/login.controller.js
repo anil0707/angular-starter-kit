@@ -4,6 +4,10 @@ angular
 
 function LoginCtrl($scope, $state, AuthService, localStorageService) {
 
+	if(localStorageService.get('authToken')){
+		$state.go('dashboard');
+	}
+
 	$scope.login = function(){
 
 		// check to make sure the form is completely valid
@@ -14,9 +18,6 @@ function LoginCtrl($scope, $state, AuthService, localStorageService) {
 		AuthService.login($scope.user)
 		.success(function (response) {
 			localStorageService.set('authToken', response.authToken);
-
-			//Remove on logout
-			//localStorageService.remove(key);
 			$state.go('dashboard');
 		})
 		.error(function (error) {

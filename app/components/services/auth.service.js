@@ -2,7 +2,7 @@ angular
 	.module('services')
 	.factory('AuthService', AuthService);
 
-function AuthService($http) {
+function AuthService($http, $location, localStorageService, $state) {
 
     function login(credentials) {
 

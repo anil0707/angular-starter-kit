@@ -25,11 +25,6 @@ function stateProvider($stateProvider) {
 		})
 		.state('logout', {
 			url : '/logout',
-			views : {
-				'@' : {
-					controller : 'LogoutCtrl',
-					template : ''	  				
-				}
-			}
+			controller : 'LogoutCtrl'
 		});
 }

@@ -5,5 +5,5 @@ angular
 function LogoutCtrl($scope, $state, localStorageService) {
 
 	localStorageService.remove('authToken');
-	window.location = '/login';
+	$state.go('login');
 }        	

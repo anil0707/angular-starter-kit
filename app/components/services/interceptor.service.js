@@ -2,7 +2,7 @@ angular
 	.module('services')
 	.factory('BearerAuthInterceptor', BearerAuthInterceptor);
 
-function BearerAuthInterceptor(localStorageService) {
+function BearerAuthInterceptor(localStorageService, $location) {
 
     return {
 		'request': function(config) {
@@ -13,17 +13,16 @@ function BearerAuthInterceptor(localStorageService) {
 		'response': function(response) {
 			
 		  return response;
-		}
+		},
+		'requestError': function(rejection) {
+		  console.log(rejection);
+		},
+		'responseError': function(rejection) {
 
-		
-		// // optional method
-		// 'requestError': function(rejection) {
-		//   console.log(rejection);
-		// },
-	
-		// // optional method
-		// 'responseError': function(rejection) {
-		// 	console.log(rejection);
-		// }
+			localStorageService.remove('authToken');
+         	$location.path('login');
+
+	        return rejection;
+		}
     };
 }
