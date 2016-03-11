@@ -1,8 +1,12 @@
 angular
  .module('user')
- .controller('SignupCtrl', ['$scope', '$state', 'UsersService', SignupCtrl]);
+ .controller('SignupCtrl', ['$scope', '$state', 'UsersService', 'localStorageService', SignupCtrl]);
 
-function SignupCtrl($scope, $state, UsersService) {
+function SignupCtrl($scope, $state, UsersService, localStorageService) {
+
+	if(localStorageService.get('authToken')){
+		$state.go('dashboard');
+	}
 
 	$scope.add = function(){
 

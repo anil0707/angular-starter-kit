@@ -17,11 +17,14 @@ function LoginCtrl($scope, $state, AuthService, localStorageService) {
 
 		AuthService.login($scope.user)
 		.success(function (response) {
+
 			localStorageService.set('authToken', response.authToken);
+
 			$state.go('dashboard');
 		})
 		.error(function (error) {
+
 			$scope.loginErr = error.message;
 		});
-	 };
+ 	};
 }
