@@ -10,6 +10,7 @@ var myApp = angular
   'directives',
   'services',
   
+  'home',
   'dashboard',
   'login',
   'user'
@@ -28,6 +29,6 @@ myApp.config(function($locationProvider, $urlRouterProvider, $httpProvider, loca
   //   requireBase: false
   // });
 
-  //$urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('login');
 
 });

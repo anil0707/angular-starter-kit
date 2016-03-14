@@ -1,11 +1,11 @@
 angular
- .module('user')
+ .module('home.user')
  .config(['$stateProvider', userStateProvider]);
 
 function userStateProvider($stateProvider) {
 
 	$stateProvider
-		.state('add', {
+		.state('home.add', {
 			url : '/add',
 			views : {
 				'@' : {

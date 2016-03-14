@@ -5,25 +5,17 @@ angular
 function stateProvider($stateProvider) {
 
 	$stateProvider
-		.state('login', {
-			url : '/login',
-			views : {
-				'@' : {
-					controller : 'LoginCtrl',
-					templateUrl : 'app/modules/login/templates/login.view.html'		  				
-				}
-			}  
+		.state('home.login', {
+			url : 'login',
+			controller : 'LoginCtrl',
+			templateUrl : 'app/modules/login/templates/login.view.html'
 		})
-		.state('forgot', {
+		.state('home.forgot', {
 			url : '/forgot',
-			views : {
-				'@' : {
-					controller : 'ForgotCtrl',
-					templateUrl : 'app/modules/login/templates/forgot.view.html'		  				
-				}
-			}  
+			controller : 'ForgotCtrl',
+			templateUrl : 'app/modules/login/templates/forgot.view.html'
 		})
-		.state('logout', {
+		.state('home.logout', {
 			url : '/logout',
 			controller : 'LogoutCtrl'
 		});

@@ -1,5 +1,5 @@
 angular
- .module('user')
+ .module('home.user')
  .controller('SignupCtrl', ['$scope', '$state', 'UsersService', 'localStorageService', SignupCtrl]);
 
 function SignupCtrl($scope, $state, UsersService, localStorageService) {

@@ -1,5 +1,5 @@
 angular
- .module('dashboard')
+ .module('home.dashboard')
  .controller('DashboardCtrl', ['$scope', 'users', DashboardCtrl]);
 
 function DashboardCtrl($scope, users) {
