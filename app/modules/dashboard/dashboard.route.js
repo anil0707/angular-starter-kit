@@ -1,12 +1,12 @@
 angular
- .module('home.dashboard')
+ .module('dashboard')
  .config(['$stateProvider', dashboardStateProvider]);
 
  function dashboardStateProvider($stateProvider, UsersService) {
 
 	$stateProvider
 		.state('home.dashboard', {
-			url : '/dashboard',
+			url : 'dashboard',
 			views : {
 				'@' : {
 					controller : 'DashboardCtrl',

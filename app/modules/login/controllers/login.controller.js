@@ -5,7 +5,7 @@ angular
 function LoginCtrl($scope, $state, AuthService, localStorageService) {
 
 	if(localStorageService.get('authToken')){
-		$state.go('dashboard');
+		$state.go('home.dashboard');
 	}
 
 	$scope.login = function(){
@@ -20,7 +20,7 @@ function LoginCtrl($scope, $state, AuthService, localStorageService) {
 
 			localStorageService.set('authToken', response.authToken);
 
-			$state.go('dashboard');
+			$state.go('home.dashboard');
 		})
 		.error(function (error) {
 

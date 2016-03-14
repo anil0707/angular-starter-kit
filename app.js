@@ -29,6 +29,6 @@ myApp.config(function($locationProvider, $urlRouterProvider, $httpProvider, loca
   //   requireBase: false
   // });
 
-  $urlRouterProvider.otherwise('login');
+  $urlRouterProvider.otherwise('/login');
 
 });

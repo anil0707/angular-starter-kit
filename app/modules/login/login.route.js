@@ -11,12 +11,12 @@ function stateProvider($stateProvider) {
 			templateUrl : 'app/modules/login/templates/login.view.html'
 		})
 		.state('home.forgot', {
-			url : '/forgot',
+			url : 'forgot',
 			controller : 'ForgotCtrl',
 			templateUrl : 'app/modules/login/templates/forgot.view.html'
 		})
 		.state('home.logout', {
-			url : '/logout',
+			url : 'logout',
 			controller : 'LogoutCtrl'
 		});
 }
