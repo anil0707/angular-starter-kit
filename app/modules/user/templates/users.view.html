@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Users List</h2>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<tr ng-repeat="user in users">
+		    <td>{{ user.name.firstname }}</td>
+		    <td>{{ user.name.lastname }}</td>
+		    <td>{{ user.email }}</td>
+		    <td>{{ user.scope }}</td>
+		</tr>
+    </tbody>
+  </table>
+</div>

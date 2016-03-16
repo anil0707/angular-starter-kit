@@ -1,12 +1,8 @@
 angular
  .module('login')
- .controller('LoginCtrl', ['$scope', '$state', 'AuthService', 'localStorageService', LoginCtrl]);
+ .controller('LoginCtrl', ['$scope' ,'$rootScope', '$state', 'AuthService', 'localStorageService', LoginCtrl]);
 
-function LoginCtrl($scope, $state, AuthService, localStorageService) {
-
-	if(localStorageService.get('authToken')){
-		$state.go('home.dashboard');
-	}
+function LoginCtrl($scope, $rootScope, $state, AuthService, localStorageService) {
 
 	$scope.login = function(){
 

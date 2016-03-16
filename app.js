@@ -17,8 +17,10 @@ var myApp = angular
  
  ]);
 
+myApp.config(config);
+myApp.run(run);
 
-myApp.config(function($locationProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider){
+function config($locationProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider){
 
   localStorageServiceProvider.setPrefix('myApp');
 
@@ -31,4 +33,31 @@ myApp.config(function($locationProvider, $urlRouterProvider, $httpProvider, loca
 
   $urlRouterProvider.otherwise('/login');
 
-});
+}
+
+function run($rootScope, $state, localStorageService){
+
+  $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
+
+      $rootScope.logged = false;
+
+      var token =  localStorageService.get('authToken');
+
+      if (!token && toState.auth !== false) {
+
+          event.preventDefault();
+          $state.go('home.login');
+        
+      } else if(token) {
+
+         $rootScope.logged = true;
+
+         if(toState.auth === false) {
+            event.preventDefault();
+         }
+      }
+      
+  });
+}
+
+

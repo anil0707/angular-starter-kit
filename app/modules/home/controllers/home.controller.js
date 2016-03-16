@@ -3,5 +3,5 @@ angular
  .controller('homeCtrl', ['$scope', 'localStorageService', homeCtrl]);
 
 function homeCtrl($scope, localStorageService) {
-	console.log(localStorageService);
+	
 }

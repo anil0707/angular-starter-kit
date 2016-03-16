@@ -4,10 +4,6 @@ angular
 
 function SignupCtrl($scope, $state, UsersService, localStorageService) {
 
-	if(localStorageService.get('authToken')){
-		$state.go('home.dashboard');
-	}
-
 	$scope.add = function(){
 
 		var payload = {

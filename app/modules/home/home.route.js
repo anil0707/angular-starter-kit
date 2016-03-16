@@ -9,7 +9,6 @@ angular
 			url : '/',
 			views : {
 				'@' : {
-					controller : 'homeCtrl',
 					templateUrl : 'app/modules/home/templates/menu.view.html'				
 				}
 			}
