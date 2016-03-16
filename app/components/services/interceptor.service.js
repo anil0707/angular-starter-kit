@@ -26,7 +26,7 @@ function BearerAuthInterceptor(localStorageService, $location, $q) {
 		'responseError': function(rejection) {
 
 			localStorageService.remove('authToken');
-         	$location.path('home.login');
+         	$location.path('app.login');
 
          	return $q.reject(rejection);
 		}

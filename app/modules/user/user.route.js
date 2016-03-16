@@ -5,16 +5,24 @@ angular
 function userStateProvider($stateProvider, UsersService) {
 
 	$stateProvider
-		.state('home.add', {
+		.state('app.add', {
 			url : 'add',
-			controller : 'SignupCtrl',
-			templateUrl : 'app/modules/user/templates/signup.view.html',
-			auth: false
+			auth: false,
+			views : {
+				'container@app' : {
+					controller : 'SignupCtrl',
+					templateUrl : 'app/modules/user/templates/signup.view.html'		
+				}
+			}
 		})
-		.state('home.users', {
+		.state('app.users', {
 			url : 'users',
-			controller : 'UsersCtrl',
-			templateUrl : 'app/modules/user/templates/users.view.html',
+			views : {
+				'container@app' : {
+					controller : 'UsersCtrl',
+					templateUrl : 'app/modules/user/templates/users.view.html'
+				}
+			},
 			resolve: {
 				users : function(UsersService) {
 					return UsersService.getUserDetails();

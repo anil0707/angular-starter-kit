@@ -5,12 +5,10 @@ angular
  function homeStateProvider($stateProvider) {
 
 	$stateProvider
-		.state('home', {
+		.state('app', {
 			url : '/',
 			views : {
-				'@' : {
-					templateUrl : 'app/modules/home/templates/menu.view.html'				
-				}
+				'nav': { templateUrl: 'app/modules/home/templates/menu.view.html' }
 			}
 		});
 }

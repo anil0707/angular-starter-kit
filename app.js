@@ -31,7 +31,7 @@ function config($locationProvider, $urlRouterProvider, $httpProvider, localStora
   //   requireBase: false
   // });
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/');
 
 }
 
@@ -46,7 +46,7 @@ function run($rootScope, $state, localStorageService){
       if (!token && toState.auth !== false) {
 
           event.preventDefault();
-          $state.go('home.login');
+          $state.go('app.login');
         
       } else if(token) {
 

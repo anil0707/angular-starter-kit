@@ -6,5 +6,5 @@ function LogoutCtrl($scope, $rootScope, $state, localStorageService) {
 
 	localStorageService.remove('authToken');
 
-	$state.go('home.login');
+	$state.go('app.login');
 }        	

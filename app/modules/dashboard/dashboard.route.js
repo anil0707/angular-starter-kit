@@ -5,9 +5,13 @@ angular
  function dashboardStateProvider($stateProvider) {
 
 	$stateProvider
-		.state('home.dashboard', {
+		.state('app.dashboard', {
 			url : 'dashboard',
-			controller : 'DashboardCtrl',
-			templateUrl : 'app/modules/dashboard/templates/dashboard.view.html'
+			views : {
+				'container@app' : {
+					controller : 'DashboardCtrl',
+					templateUrl : 'app/modules/dashboard/templates/dashboard.view.html'
+				}
+			}
 		});
 }

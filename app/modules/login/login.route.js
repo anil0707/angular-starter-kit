@@ -5,20 +5,33 @@ angular
 function stateProvider($stateProvider) {
 
 	$stateProvider
-		.state('home.login', {
+		.state('app.login', {
 			url : 'login',
-			controller : 'LoginCtrl',
-			templateUrl : 'app/modules/login/templates/login.view.html',
-			auth: false
+			auth: false,
+			views : {
+				'container@app' : {
+					controller : 'LoginCtrl',
+					templateUrl : 'app/modules/login/templates/login.view.html'				
+				}
+			}
 		})
-		.state('home.forgot', {
+		.state('app.forgot', {
 			url : 'forgot',
-			controller : 'ForgotCtrl',
-			templateUrl : 'app/modules/login/templates/forgot.view.html',
-			auth: false
+			auth: false,
+			views : {
+				'container@app' : {
+					controller : 'ForgotCtrl',
+					templateUrl : 'app/modules/login/templates/forgot.view.html'				
+				}
+			}
 		})
-		.state('home.logout', {
+		.state('app.logout', {
 			url : 'logout',
-			controller : 'LogoutCtrl'
+			views : {
+				'container@app' : {
+					controller : 'LogoutCtrl',
+					templateUrl : ''				
+				}
+			}
 		});
 }

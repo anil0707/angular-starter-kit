@@ -16,7 +16,7 @@ function LoginCtrl($scope, $rootScope, $state, AuthService, localStorageService)
 
 			localStorageService.set('authToken', response.authToken);
 
-			$state.go('home.dashboard');
+			$state.go('app.dashboard');
 		})
 		.error(function (error) {
 
