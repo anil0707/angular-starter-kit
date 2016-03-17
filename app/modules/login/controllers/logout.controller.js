@@ -1,9 +1,10 @@
 angular
  .module('login')
- .controller('LogoutCtrl', ['$scope', '$state', 'localStorageService', LogoutCtrl]);
+ .controller('LogoutCtrl', ['$scope', '$rootScope', '$state', 'localStorageService', LogoutCtrl]);
 
-function LogoutCtrl($scope, $state, localStorageService) {
+function LogoutCtrl($scope, $rootScope, $state, localStorageService) {
 
 	localStorageService.remove('authToken');
-	$state.go('login');
+
+	$state.go('app.login');
 }        	

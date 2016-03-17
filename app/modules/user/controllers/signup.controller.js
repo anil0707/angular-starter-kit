@@ -4,10 +4,6 @@ angular
 
 function SignupCtrl($scope, $state, UsersService, localStorageService) {
 
-	if(localStorageService.get('authToken')){
-		$state.go('dashboard');
-	}
-
 	$scope.add = function(){
 
 		var payload = {
@@ -22,7 +18,7 @@ function SignupCtrl($scope, $state, UsersService, localStorageService) {
 
 		UsersService.add(payload)
 		.success(function (response) {
-			$state.go('dashboard');
+			$state.go('app.dashboard');
 		})
 		.error(function (error) {
 			$scope.err = error.message;

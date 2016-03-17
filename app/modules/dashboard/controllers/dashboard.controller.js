@@ -1,9 +1,7 @@
 angular
  .module('dashboard')
- .controller('DashboardCtrl', ['$scope', 'users', DashboardCtrl]);
+ .controller('DashboardCtrl', ['$scope', DashboardCtrl]);
 
-function DashboardCtrl($scope, users) {
-
-	$scope.users = users.data;
+function DashboardCtrl($scope) {
 	
 }
