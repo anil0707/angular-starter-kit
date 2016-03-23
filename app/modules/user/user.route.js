@@ -28,5 +28,24 @@ function userStateProvider($stateProvider, UsersService) {
 					return UsersService.getUserDetails();
 				}
 			}
+		})
+		.state('app.success', {
+			url : 'addsuccess',
+			auth: false,
+			views : {
+				'container@app' : {
+					templateUrl : 'app/modules/user/templates/registrationSuccess.view.html'
+				}
+			}
+		})
+		.state('app.verifyEmail', {
+			url : 'emailverify/{token}',
+			auth: false,
+			views : {
+				'container@app' : {
+					controller : 'EmailVerificationCtrl',
+					templateUrl : 'app/modules/user/templates/emailVerify.view.html'		
+				}
+			}
 		});
 }

@@ -21,8 +21,18 @@ function UsersService($http) {
 		});
     }
 
+    function verifyToken(params) {
+
+    	return $http({
+    		method: 'GET',
+    		url: 'http://localhost:8000/verifyemail',
+    		headers: {'Authorization': 'Bearer '+ params.token }
+		});
+    }
+
     return {
       getUserDetails: getUserDetails,
-      add: add
+      add: add,
+      verifyToken: verifyToken
 	};
 }

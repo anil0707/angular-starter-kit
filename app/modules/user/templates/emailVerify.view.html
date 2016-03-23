@@ -1,0 +1,28 @@
+<div class="container">
+<div ng-if="success">
+  <div class="alert alert-success">
+    Thank you! Your email has been verified.
+  </div>
+  <div>
+    <p>Click <a ui-sref="app.login">here</a> to login</p>
+  </div>
+</div>
+
+  <div class="alert alert-danger">
+    Error verifying email. Token expired or invalid.
+  </div>
+  <div>
+    <p>Please enter your registered email Id to resend verification link</p>
+
+    <form name="resendEmail" ng-submit="sendEmailVerificationMail()">
+	    <div class="form-group form-inline" ng-class="{ 'has-error' : resendEmail.email.$invalid && !resendEmail.email.$pristine }">
+	        <input type="email" name="email" class="form-control" ng-model = "email" required>
+	        <p ng-show="resendEmail.email.$invalid && !resendEmail.email.$pristine" class="help-block error">Enter a valid email.</p>
+	    </div>
+	    <div class="form-group">
+	  		<button class="btn btn-primary" type="submit" ng-disabled="resendEmail.$invalid">Save</button>
+	  	</div>
+  	</form>
+
+</div> 
+</div>

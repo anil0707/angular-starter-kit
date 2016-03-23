@@ -18,7 +18,7 @@ function SignupCtrl($scope, $state, UsersService, localStorageService) {
 
 		UsersService.add(payload)
 		.success(function (response) {
-			$state.go('app.dashboard');
+			$state.go('app.success', {}, { location: false } );
 		})
 		.error(function (error) {
 			$scope.err = error.message;

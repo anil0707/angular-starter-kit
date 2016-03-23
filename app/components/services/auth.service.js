@@ -13,7 +13,16 @@ function AuthService($http, $location, localStorageService, $state) {
 		});
     }
 
+    function sendVerificationMail(email) {
+    	return $http({
+    		method: 'POST',
+    		url: 'http://localhost:8000/sendEmailVerificationMail',
+    		data: {'email': email}
+    	})
+    }
+
     return {
-      login: login
+      login: login,
+      sendVerificationMail: sendVerificationMail
 	};
 }
