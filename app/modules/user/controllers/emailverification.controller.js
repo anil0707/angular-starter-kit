@@ -1,21 +1,20 @@
 angular
  .module('user')
- .controller('EmailVerificationCtrl', ['$scope', '$stateParams', 'UsersService', 'AuthService', EmailVerificationCtrl]);
+ .controller('EmailVerificationCtrl', ['$scope', '$state', '$stateParams', 'UsersService', 'AuthService', EmailVerificationCtrl]);
 
-function EmailVerificationCtrl($scope, $stateParams, UsersService, AuthService) {
+function EmailVerificationCtrl($scope, $state, $stateParams, UsersService, AuthService) {
 
-	$scope.success = true;
-	// UsersService.verifyToken($stateParams)
-	// 	.then(function(){
-	// 		$scope.success = true;
-	// 	})
-	// 	.catch(function(err){
-	// 		$scope.success = false;
-	// 	});
+	$scope.success = false;
+
+	UsersService.verifyEmail($stateParams)
+		.then(function(){
+			$scope.success = true;
+		})
+		.catch(function(err){
+			$scope.success = false;
+		});
 
 	$scope.sendEmailVerificationMail = function(){
-
-		console.log($scope);
 
 		AuthService.sendVerificationMail($scope.email)
 		.success(function (response) {

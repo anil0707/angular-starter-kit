@@ -24,8 +24,8 @@
 
     <div class="form-group" ng-class="{ 'has-error' : frmRegister.password.$invalid && !frmRegister.password.$pristine }">
         <label>Password</label>
-        <input type="password" name="password" class="form-control" ng-model="password" required>
-        <p ng-show="frmRegister.password.$invalid && !frmRegister.password.$pristine" class="help-block">Password is required.</p>
+        <input type="password" name="password" class="form-control" ng-model="password" required ng-minlength="6">
+        <p ng-show="frmResetPassword.password.$error.minlength || frmResetPassword.password.$invalid && !frmResetPassword.password.$pristine" class="help-block">Minimum 6 characters required</p>
     </div>
 
     <div class="form-group">

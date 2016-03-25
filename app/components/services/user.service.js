@@ -21,7 +21,7 @@ function UsersService($http) {
 		});
     }
 
-    function verifyToken(params) {
+    function verifyEmail(params) {
 
     	return $http({
     		method: 'GET',
@@ -33,6 +33,6 @@ function UsersService($http) {
     return {
       getUserDetails: getUserDetails,
       add: add,
-      verifyToken: verifyToken
+      verifyEmail: verifyEmail
 	};
 }

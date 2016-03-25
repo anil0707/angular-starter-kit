@@ -18,11 +18,30 @@ function AuthService($http, $location, localStorageService, $state) {
     		method: 'POST',
     		url: 'http://localhost:8000/sendEmailVerificationMail',
     		data: {'email': email}
-    	})
+    	});
+    }
+
+    function sendPasswordResetMail(email) {
+        return $http({
+            method: 'POST',
+            url: 'http://localhost:8000/sendPasswordResetMail',
+            data: {'email': email}
+        });
+    }
+
+    function resetPassword(params) {
+        return $http({
+            method: 'POST',
+            url: 'http://localhost:8000/resetPassword',
+            headers: {'Authorization': 'Bearer '+ params.token },
+            data: {'password': params.password}
+        });
     }
 
     return {
       login: login,
-      sendVerificationMail: sendVerificationMail
+      sendVerificationMail: sendVerificationMail,
+      sendPasswordResetMail: sendPasswordResetMail,
+      resetPassword : resetPassword
 	};
 }

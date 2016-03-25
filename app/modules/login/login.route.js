@@ -33,5 +33,15 @@ function stateProvider($stateProvider) {
 					templateUrl : ''				
 				}
 			}
+		})
+		.state('app.resetPassword', {
+			url : 'resetpassword/{token}',
+			auth: false,
+			views : {
+				'container@app' : {
+					controller : 'ResetPassCtrl',
+					templateUrl : 'app/modules/login/templates/resetPassword.view.html'		
+				}
+			}
 		});
 }
