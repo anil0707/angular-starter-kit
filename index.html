@@ -14,6 +14,12 @@
 </head>
 <body>
 
+  <div class="page-processing" ng-show="activeCalls">
+      <div class="loader">
+          <img src="app/assets/images/spin.gif" class="loader-inner">
+      </div>
+  </div>
+
   <div ui-view="header"></div>
   <div ui-view="nav"></div>
   <div ui-view="footer"></div>

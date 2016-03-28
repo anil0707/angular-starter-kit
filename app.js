@@ -40,6 +40,7 @@ function run($rootScope, $state, localStorageService){
   $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
 
       $rootScope.logged = false;
+      
 
       var token =  localStorageService.get('authToken');
 
