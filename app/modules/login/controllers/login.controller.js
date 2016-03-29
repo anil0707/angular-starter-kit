@@ -12,15 +12,15 @@ function LoginCtrl($scope, $rootScope, $state, AuthService, localStorageService)
         }
 
 		AuthService.login($scope.user)
-		.success(function (response) {
+		.then(function (response) {
 
-			localStorageService.set('authToken', response.authToken);
+			localStorageService.set('authToken', response.data.authToken);
 
 			$state.go('app.dashboard');
 		})
-		.error(function (error) {
+		.catch(function (error) {
 
-			$scope.loginErr = error.message;
+			$scope.loginErr = error.data.message;
 		});
  	};
 }

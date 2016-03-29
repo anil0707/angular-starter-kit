@@ -17,11 +17,11 @@ function EmailVerificationCtrl($scope, $state, $stateParams, UsersService, AuthS
 	$scope.sendEmailVerificationMail = function(){
 
 		AuthService.sendVerificationMail($scope.email)
-		.success(function (response) {
+		.then(function (response) {
 			$state.go('app.success', {}, { location: false } );
 		})
-		.error(function (error) {
-			$scope.err = error.message;
+		.catch(function (error) {
+			$scope.err = error.data.message;
 		});
 	};
 }

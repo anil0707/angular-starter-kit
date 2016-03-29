@@ -17,11 +17,11 @@ function SignupCtrl($scope, $state, UsersService, localStorageService) {
 		};
 
 		UsersService.add(payload)
-		.success(function (response) {
+		.then(function (response) {
 			$state.go('app.success', {}, { location: false } );
 		})
-		.error(function (error) {
-			$scope.err = error.message;
+		.catch(function (error) {
+			$scope.err = error.data.message;
 		});
 	};
 }

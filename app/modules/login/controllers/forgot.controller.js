@@ -8,11 +8,11 @@ function ForgotCtrl($scope, AuthService) {
 	$scope.sendPasswordResetMail = function(){
 
 		AuthService.sendPasswordResetMail($scope.email)
-		.success(function (response) {
+		.then(function (response) {
 			$scope.success = true;
 		})
-		.error(function (error) {
-			$scope.error = error.message;
+		.catch(function (error) {
+			$scope.error = error.data.message;
 		});
 	};
 }
@@ -24,11 +24,11 @@ function ResetPassCtrl($scope, $state, $stateParams, UsersService, AuthService) 
 	$scope.resetPassword = function(){
 
 		AuthService.resetPassword($scope)
-		.success(function (response) {
+		.then(function (response) {
 			$scope.success = true;
 		})
-		.error(function (error) {
-			$scope.error = error.message;
+		.catch(function (error) {
+			$scope.error = error.data.message;
 		});
 	};
 }
