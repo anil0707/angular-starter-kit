@@ -2,13 +2,13 @@ angular
 	.module('services')
 	.factory('AuthService', AuthService);
 
-function AuthService($http, $location, localStorageService, $state) {
+function AuthService($http, $location, localStorageService, $state, config) {
 
     function login(credentials) {
 
 		return $http({
 			method: 'POST',
-			url: 'http://localhost:8000/login',
+			url: config.apiUrl+'login',
 			data: credentials
 		});
     }
@@ -16,7 +16,7 @@ function AuthService($http, $location, localStorageService, $state) {
     function sendVerificationMail(email) {
     	return $http({
     		method: 'POST',
-    		url: 'http://localhost:8000/sendEmailVerificationMail',
+    		url: config.apiUrl+'sendEmailVerificationMail',
     		data: {'email': email}
     	});
     }
@@ -24,7 +24,7 @@ function AuthService($http, $location, localStorageService, $state) {
     function sendPasswordResetMail(email) {
         return $http({
             method: 'POST',
-            url: 'http://localhost:8000/sendPasswordResetMail',
+            url: config.apiUrl+'sendPasswordResetMail',
             data: {'email': email}
         });
     }
@@ -32,7 +32,7 @@ function AuthService($http, $location, localStorageService, $state) {
     function resetPassword(params) {
         return $http({
             method: 'POST',
-            url: 'http://localhost:8000/resetPassword',
+            url: config.apiUrl+'resetPassword',
             headers: {'Authorization': 'Bearer '+ params.token },
             data: {'password': params.password}
         });

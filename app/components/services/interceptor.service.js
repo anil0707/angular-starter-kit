@@ -33,12 +33,6 @@ function BearerAuthInterceptor(localStorageService, $location, $q, $rootScope) {
 
 			localStorageService.remove('authToken');
 
-
-			//If the auth token is expired
-			// if(rejection.status == 401) {
-			// 	$location.path('app.login');
-			// }
-
          	return $q.reject(rejection);
 		}
     };

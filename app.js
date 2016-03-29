@@ -9,6 +9,7 @@ var myApp = angular
  
   'directives',
   'services',
+  'myApp.config',
   
   'home',
   'dashboard',
@@ -58,6 +59,10 @@ function run($rootScope, $state, localStorageService){
          }
       }
       
+  });
+
+  $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
+     $state.go('app.login');
   });
 }
 

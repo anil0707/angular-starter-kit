@@ -2,13 +2,13 @@ angular
 	.module('services')
 	.factory('UsersService', UsersService);
 
-function UsersService($http) {
+function UsersService($http, config) {
 
 	function getUserDetails() {
 
 		return $http({
 			method: 'GET',
-			url: 'http://localhost:8000/users'
+			url: config.apiUrl+'users'
 		});
     }
 
@@ -16,7 +16,7 @@ function UsersService($http) {
 
 		return $http({
 			method: 'POST',
-			url: 'http://localhost:8000/add',
+			url: config.apiUrl+'add',
 			data: payload
 		});
     }
@@ -25,7 +25,7 @@ function UsersService($http) {
 
     	return $http({
     		method: 'GET',
-    		url: 'http://localhost:8000/verifyemail',
+    		url: config.apiUrl+'verifyemail',
     		headers: {'Authorization': 'Bearer '+ params.token }
 		});
     }

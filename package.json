@@ -4,8 +4,7 @@
   "description": "Angular Starter Kit",
   "main": "app.js",
   "dependencies": {
-    "gulp-connect": "^3.1.0",
-    "gulp-open": "^1.0.0",
+    "gulp-ng-config": "^1.2.1",
     "gulp-webserver": "^0.9.1"
   },
   "devDependencies": {

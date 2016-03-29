@@ -7,14 +7,21 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
-var connect = require('gulp-connect');
 var webserver = require('gulp-webserver');
+var gulpNgConfig = require('gulp-ng-config');
 
+
+gulp.task('config', function () {
+    gulp.src('config.json')
+        .pipe(gulpNgConfig('myApp.config'))
+        .pipe(gulp.dest('.'))
+});
 
 // Lint Task
 gulp.task('lint', function() {
     return gulp.src([
         'app.js',
+        'config.js',
         './app/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
@@ -29,7 +36,7 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src(['app.js','./app/**/*.js'])
+    return gulp.src(['app.js','config.js','./app/**/*.js'])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('./build/js'))
         .pipe(rename('all.min.js'))
@@ -45,7 +52,7 @@ gulp.task('library', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch(['app.js','./app/**/*.js'], ['lint', 'scripts']);
+    gulp.watch(['app.js','config.js','./app/**/*.js'], ['lint', 'scripts']);
     gulp.watch('./app/**/*.css', ['sass']);
 });
 
@@ -58,4 +65,4 @@ gulp.task('webserver', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'library', 'webserver']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch', 'library', 'webserver', 'config']);
