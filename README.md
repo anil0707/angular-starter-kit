@@ -29,7 +29,7 @@ Before you start using this starter kit, Go through following style guide for be
 * Clone this repo. If you just want to start a new project without the commit history then you can do:
 
    ``` 
-     git clone --depth=1 https://github.com/shamsher31/angular-starter-kit.git <your-project-name> 
+     git clone --depth=1 https://github.com/anil0707/angular-starter-kit.git <your-project-name> 
      cd <your-project-name>  
    ```
 
@@ -58,5 +58,5 @@ Before you start using this starter kit, Go through following style guide for be
 Feel free to suggest improvments and send a PR if you find any flaws in this starter kit.
 
 ### License
-MIT © [Shamsher Ansari](https://github.com/shamsher)
+MIT © [Anil Chauhan](https://github.com//anil0707)
 
